@@ -26,12 +26,22 @@ const DuplicateNum = () => {
     newArray.splice(anotherRandInd, 0, duplicate);
     setArrayToCheck(newArray);
   };
+  // const findDuplicate = array => {
+  //   for (let i = 0; i < array.length; i++) {
+  //     for (let k = i + 1; k < array.length; k++) {
+  //       if (array[i] === array[k]) {
+  //         return array[i];
+  //       }
+  //     }
+  //   }
+  // };
+  // ALTERNATE method using .includes()
   const findDuplicate = array => {
+    let copy = [...array];
     for (let i = 0; i < array.length; i++) {
-      for (let k = i + 1; k < array.length; k++) {
-        if (array[i] === array[k]) {
-          return array[i];
-        }
+      // checks if value starting at index + 1 is in the copy array
+      if (copy.includes(array[i], i + 1)) {
+        return array[i];
       }
     }
   };
@@ -58,7 +68,18 @@ const DuplicateNum = () => {
       }
     }
   };
-	`;
+  `;
+  const duplicateIntText2 = `
+  const findDuplicate = array => {
+    let copy = [...array];
+    for (let i = 0; i < array.length; i++) {
+      // checks if value starting at index + 1 is in the copy array
+      if (copy.includes(array[i], i + 1)) {
+        return array[i];
+      }
+    }
+  };
+  `;
   return (
     <Container className={cls.AltArraysSection}>
       <h4 className={cls.subsectionHeading}>Duplicate Number in an Array</h4>
@@ -72,6 +93,11 @@ const DuplicateNum = () => {
             I would compare each index position to all following index position
             values. Iterate through the array while referencing the changed
             index position on each iteration.
+          </CardText>
+          <CardText>
+            An alternate approach would be to create a copy of the array, and
+            use includes() to see if the value at each index is included
+            anywhere in a duplicate array aside from the current index.
           </CardText>
           <CardSubtitle>
             <strong>Array to Check:</strong>
@@ -94,6 +120,10 @@ const DuplicateNum = () => {
             </Alert>
           </div>
           <div>{duplicateIntText}</div>
+          <div>
+            <strong>Alternate approach with JS methods</strong>
+          </div>
+          <div>{duplicateIntText2}</div>
         </CardBody>
       </Card>
     </Container>
