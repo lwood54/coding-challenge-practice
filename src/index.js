@@ -1,16 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Arrays from "./components/Arrays/Arrays";
+import MissingInt from "./components/Arrays/MissingInt";
+import DuplicateNum from "./components/Arrays/DuplicateNum";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cls from "./index.css";
+import cls from "./index.module.css";
 
 function App() {
-	return (
-		<div className="App">
-			<h1 className="h1">Coding Challenge Questions & Thought Process</h1>
-			<Arrays />
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1 className={cls.mainHeading}>
+        Coding Challenge Questions & Thought Process
+      </h1>
+      <h1 className={cls.sectionHeading}>Arrays</h1>
+      <MissingInt />
+      <DuplicateNum />
+    </div>
+  );
 }
 
 const rootElement = document.getElementById("root");

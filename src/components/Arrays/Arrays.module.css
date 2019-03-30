@@ -1,9 +1,30 @@
 .ArraysSection {
-	background-color: #ffcc80;
-	border-radius: 4px;
-	padding: 15px;
+  background-color: #5eaef0;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 15px;
+}
+
+.AltArraysSection {
+  background-color: #49f3b2;
+  border-radius: 4px;
+  padding: 15px;
 }
 
 .button {
-	display: inline-block;
+  display: inline-block;
+  margin: 10px auto 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.Alert {
+  width: 50%;
+  margin: 10px auto;
 }
